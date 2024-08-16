@@ -130,7 +130,7 @@ console.log(session)
       />
       <Typography
         as="a"
-        href="notice"
+        href="notices"
         variant="small"
         color="blue-gray"
         className="font-bold"
