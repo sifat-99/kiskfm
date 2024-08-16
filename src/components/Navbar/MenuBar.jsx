@@ -190,6 +190,20 @@ console.log(session)
       </Typography>
 
       }
+      {
+        session.data ?
+        <Typography
+        as="a"
+        href="dashboard"
+        variant="small"
+        color="blue-gray"
+        className="font-bold"
+      >
+        <ListItem className="flex items-center gap-2 py-2 pr-4">Dashboard </ListItem>
+      </Typography> : null
+
+      }
+
     </List>
   );
 }
