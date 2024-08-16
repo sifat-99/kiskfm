@@ -2,6 +2,7 @@ import React from "react";
 import Logo from "/public/Logo.png";
 import Image from "next/image";
 import "./Nav.css";
+import Link from "next/link";
 
 const containerStyle = {
   backgroundImage: "url('https://i.ibb.co/s93XJjs/menu.png')",
@@ -77,9 +78,10 @@ const Navbar = () => {
               </svg>
             </span>
           </button>
+          <Link href="https://xiclassadmission.gov.bd/">
           <button class="Btn-Container">
             <span class="text">
-              Alim Admission {year}-{year + 1}{" "}
+              Xi Class Admission {year}-{year + 1}{" "}
             </span>
             <span class="icon-Container">
               <svg
@@ -102,6 +104,7 @@ const Navbar = () => {
               </svg>
             </span>
           </button>
+          </Link>
         </div>
       </div>
     </div>
