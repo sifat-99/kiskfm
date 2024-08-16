@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import './menu.css'
 import {
   Navbar,
   Collapse,
@@ -20,7 +21,8 @@ import {
   ChevronUpIcon,
   PhotoIcon,
 } from "@heroicons/react/24/outline";
-import { FaImage, FaPerson } from "react-icons/fa6";
+import { FaHouseMedical, FaImage, FaPerson } from "react-icons/fa6";
+import Link from "next/link";
 
 function NavListMenu(data) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -37,9 +39,9 @@ function NavListMenu(data) {
         allowHover={true}
       >
         <MenuHandler>
-          <Typography as="div" variant="small" className="font-medium">
+          <Typography as="div" variant="small" className="font-bold">
             <ListItem
-              className="flex items-center gap-2 py-2 pr-4 font-medium text-gray-900"
+              className="flex items-center gap-2 py-2 pr-4 font-bold text-black Navbar"
               selected={isMenuOpen || isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen((cur) => !cur)}
             >
@@ -59,9 +61,9 @@ function NavListMenu(data) {
             </ListItem>
           </Typography>
         </MenuHandler>
-        <MenuList className="hidden rounded-xl lg:block">
+        <MenuList className="hidden rounded-xl lg:block Navbar text-black">
           {buttons.Links.map((link, index) => (
-            <Typography key={index} as="a" href={link?.link}>
+            <Typography className="font-bold" key={index} as="a" href={link?.link}>
               {link.name}
             </Typography>
           ))}
@@ -75,8 +77,8 @@ function NavListMenu(data) {
               as="a"
               href={link.link}
               variant="small"
-              color="blue-gray"
-              className="font-medium"
+              color="black"
+              className="font-bold"
             >
               <ListItem className="flex items-center gap-2 py-2 pr-4">
                 {link.name}
@@ -91,15 +93,17 @@ function NavListMenu(data) {
 
 function NavList() {
   return (
-    <List className="mb-6 mt-4 p-0 lg:mb-0 lg:mt-0 lg:flex-row lg:p-1">
+    <List className="mb-6 mt-4 p-0 lg:mb-0 lg:mt-0 lg:flex-row lg:p-1 Navbar">
+
+      
       <Typography
         as="a"
         href="#"
         variant="small"
         color="blue-gray"
-        className="font-medium"
+        className="font-bold "
       >
-        <ListItem className="flex items-center gap-2 py-2 pr-4">Home</ListItem>
+        <ListItem className="flex items-center gap-2 py-2 pr-4">Home <FaHouseMedical/></ListItem>
       </Typography>
       <NavListMenu
         data={{
@@ -125,7 +129,7 @@ function NavList() {
         href="notice"
         variant="small"
         color="blue-gray"
-        className="font-medium"
+        className="font-bold"
       >
         <ListItem className="flex items-center gap-2 py-2 pr-4">Notice</ListItem>
       </Typography>
@@ -144,7 +148,7 @@ function NavList() {
         href="gallery"
         variant="small"
         color="blue-gray"
-        className="font-medium"
+        className="font-bold"
       >
         <ListItem className="flex items-center gap-2 py-2 pr-4">Gallery <FaImage/> </ListItem>
       </Typography>
@@ -153,7 +157,7 @@ function NavList() {
         href="about"
         variant="small"
         color="blue-gray"
-        className="font-medium"
+        className="font-bold"
       >
         <ListItem className="flex items-center gap-2 py-2 pr-4">About Us </ListItem>
       </Typography>
@@ -162,7 +166,7 @@ function NavList() {
         href="about"
         variant="small"
         color="blue-gray"
-        className="font-medium"
+        className="font-bold"
       >
         <ListItem className="flex items-center gap-2 py-2 pr-4"> Contact<FaPerson/> </ListItem>
       </Typography>
@@ -171,7 +175,7 @@ function NavList() {
         href="login"
         variant="small"
         color="blue-gray"
-        className="font-medium"
+        className="font-bold hidden lg:block"
       >
         <ListItem className="flex items-center gap-2 py-2 pr-4">Login </ListItem>
       </Typography>
@@ -190,7 +194,7 @@ export function MenuBar() {
   }, []);
 
   return (
-    <Navbar className="max-w-full py-2">
+    <Navbar className="max-w-full py-2 Navbar">
       <div className="flex items-center justify-between text-blue-gray-900">
         <div className="hidden lg:block">
           <NavList />
@@ -210,11 +214,8 @@ export function MenuBar() {
       <Collapse open={openNav}>
         <NavList />
         <div className="flex w-full flex-nowrap items-center gap-2 lg:hidden">
-          <Button size="sm" fullWidth>
-            Get Started
-          </Button>
           <Button variant="outlined" size="sm" fullWidth>
-            Log In
+            <Link href="/login">Login</Link>
           </Button>
         </div>
       </Collapse>

@@ -78,13 +78,13 @@ const Footer = () => {
           >
             <h1 className="text-2xl font-bold">আমাদের সাথে যোগাযোগ করুন</h1>
             <div className="flex gap-4 mt-10">
-              <Link href="https://www.facebook.com/">
+              <Link href="https://www.facebook.com/Kesbafazilmadrasha">
                 <FaFacebook className="text-4xl text-blue-600" />
               </Link>
-              <Link href="https://www.facebook.com/">
+              <Link href="https://www.youtube.com/">
                 <FaYoutube className="text-4xl text-red-600" />
               </Link>
-              <Link href="https://www.facebook.com/">
+              <Link href="https://www.instagram.com/">
                 <FaInstagram className="text-4xl text-orange-600" />
               </Link>
             </div>
