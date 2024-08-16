@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar/Navbar";
 import "../globals.css";
 import { MenuBar } from "@/components/Navbar/MenuBar";
+import Footer from "@/components/Footer/Footer";
 
 
 
@@ -17,7 +18,10 @@ export default function RootLayout({ children }) {
           <MenuBar />
         </div>
 
+        <div className="max-w-7xl mx-auto">
         {children}
+        </div>
+        <Footer/>
       </body>
     </html>
   );
