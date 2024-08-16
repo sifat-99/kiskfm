@@ -1,5 +1,6 @@
 
 import { task } from "@/models/Task";
+import user from "@/models/User";
 import connect from "@/utils/db"; // Import the MongoDB connection utility
 
 import { NextResponse } from "next/server";
@@ -17,7 +18,7 @@ export const POST = async (req) => {
     console.log('receive from google', database)
     await connect()
     try {
-      await task.create(database)
+      await user.create(database)
       return new NextResponse("Task successfully created", {status: 200})
     } catch (error) {
       console.log(error)

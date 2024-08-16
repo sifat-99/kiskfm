@@ -1,7 +1,7 @@
 import FBMessanger from "@/components/FBMessanger/FBMessanger";
 // import { CartProvider } from "@/utils/Cart/CartContext";
 // import { QueryProvider } from "@/utils/QueryClientProvider";
-// import AuthProvider from "@/utils/SessionProvider";
+import AuthProvider from "@/utils/SessionProvider";
 // import { Toaster } from "react-hot-toast";
 import './globals.css'
 
@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        {/* <AuthProvider> */}
+        <AuthProvider>
           {/* <QueryProvider>
             <CartProvider> */}
               <div>
@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
               </div>
             {/* </CartProvider>
           </QueryProvider> */}
-        {/* </AuthProvider> */}
+        </AuthProvider>
       </body>
     </html>
   );

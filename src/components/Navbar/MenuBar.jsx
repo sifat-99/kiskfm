@@ -23,6 +23,8 @@ import {
 } from "@heroicons/react/24/outline";
 import { FaHouseMedical, FaImage, FaPerson } from "react-icons/fa6";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
+import Logout from "../Logout/Logout";
 
 function NavListMenu(data) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -92,6 +94,8 @@ function NavListMenu(data) {
 }
 
 function NavList() {
+const session = useSession();
+console.log(session)
   return (
     <List className="mb-6 mt-4 p-0 lg:mb-0 lg:mt-0 lg:flex-row lg:p-1 Navbar">
 
@@ -170,15 +174,22 @@ function NavList() {
       >
         <ListItem className="flex items-center gap-2 py-2 pr-4"> Contact<FaPerson/> </ListItem>
       </Typography>
+      {
+        session.data ? 
+       <div>
+        <Logout/>
+       </div> :
       <Typography
         as="a"
         href="login"
         variant="small"
         color="blue-gray"
-        className="font-bold hidden lg:block"
+        className="font-bold"
       >
         <ListItem className="flex items-center gap-2 py-2 pr-4">Login </ListItem>
       </Typography>
+
+      }
     </List>
   );
 }

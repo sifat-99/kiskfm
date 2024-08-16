@@ -1,4 +1,5 @@
 "use client";
+import Logout from "@/components/Logout/Logout";
 /* eslint-disable @next/next/no-img-element */
 import Banner from "@/components/Pages/Banner";
 import MapSection from "@/components/Pages/MapSection";
