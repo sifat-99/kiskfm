@@ -1,22 +1,18 @@
 'use client'
-import { ListItem, Typography } from '@material-tailwind/react'
 import { signOut } from 'next-auth/react'
+import Link from 'next/link'
 import React from 'react'
 
 const Logout = () => {
   return (
     
-    <div onClick={() => signOut()}
-    className="" href=""
-    ><Typography
-    as="a"
-    href="about"
-    variant="small"
-    color="blue-gray"
-    className="font-bold"
-  >
-    <ListItem className="flex items-center gap-2 py-2 pr-4"> Logout </ListItem>
-  </Typography></div>
+    <button onClick={() => signOut()}
+    className="text-black text-sm mt-1 font-bold transition-all duration-500 ease-in-out hover:bg-gray-400 py-1 px-2 rounded-xl" 
+    >
+      <Link href="/">
+        <p>Logout</p>
+      </Link>
+    </button>
   )
 }
 
