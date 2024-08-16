@@ -26,6 +26,15 @@ module.exports = withMT({
         "nano": ["Noto Sans Bengali", "sans-serif"],
         "arabic": ["Noto Sans Arabic", "sans-serif"],
       },
+      animation: {
+        'slow-spin': 'slowSpin 10s linear infinite',
+      },
+      keyframes: {
+        slowSpin: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+      },
     },
   },
   plugins: [require("daisyui")],

@@ -1,11 +1,11 @@
 
-import { bannerimage } from "@/models/BannerImages";
+import { runningNotice } from "@/models/RunningNotice";
 import connect from "@/utils/db"
 import { NextResponse } from "next/server";
 
 export const GET = async () => {
   await connect();
-  const data = await bannerimage.find();
+  const data = await runningNotice.find();
   return NextResponse.json(data, {status:200});
 }
 
@@ -15,7 +15,7 @@ export const POST = async (req) => {
     console.log('receive from google', database)
     await connect()
     try {
-      await bannerimage.create(database)
+      await runningNotice.create(database)
       return new NextResponse("Task successfully created", {status: 200})
     } catch (error) {
       console.log(error)
