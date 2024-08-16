@@ -102,7 +102,7 @@ console.log(session)
       
       <Typography
         as="a"
-        href="#"
+        href="/"
         variant="small"
         color="blue-gray"
         className="font-bold "
