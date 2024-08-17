@@ -3,7 +3,7 @@ import { createUploadthing} from "uploadthing/next";
 const f = createUploadthing();
  
 export const ourFileRouter = {
-  imageUploader: f({ image: { maxFileSize: "1MB" } })
+  imageUploader: f({ image: { maxFileSize: "5MB" } })
     
     .onUploadComplete(async ({  file }) => {
       console.log("file url", file.url);

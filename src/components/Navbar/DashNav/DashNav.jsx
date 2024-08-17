@@ -9,6 +9,7 @@ import {
   FaPlus,
   FaSquarePollVertical,
   FaHouse,
+  FaPhotoFilm,
 } from "react-icons/fa6";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -118,17 +119,17 @@ const DashNav = () => {
           </Link>
 
           <Link
-            href={"/dashboard/scheduled-event"}
+            href={"/dashboard/gallery"}
             className="flex justify-center items-center"
           >
             <DashNavButton
               className={`flex justify-start items-center  text-lg font-semibold gap-3 duration-500 btn glass w-full  ${
                 isClicked && "btn glass"
               } ${
-                pathname === "/dashboard/scheduled-event" && "bg-transparent text-black"
+                pathname === "/dashboard/gallery" && "bg-transparent text-black"
               }`}
             >
-              <FaCalendar /> {isClicked ? "" : "Scheduled Events"}
+              <FaPhotoFilm /> {isClicked ? "" : "Gallery"}
             </DashNavButton>
           </Link>
         </div>
@@ -210,6 +211,16 @@ const DashNav = () => {
                 }`}
               >
                 <FaCalendar />Events
+              </DashNavButton>
+            </Link>
+            <hr />
+            <Link href={"/dashboard/gallery"}>
+              <DashNavButton
+                className={`flex justify-start items-center Navbar text-lg font-semibold gap-3 duration-500 btn glass  w-full ${
+                  pathname === "/dashboard/gallery" && "Navbar"
+                }`}
+              >
+                <FaPhotoFilm />Gallery
               </DashNavButton>
             </Link>
             <hr />
