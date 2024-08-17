@@ -19,9 +19,9 @@ export default function RootLayout({ children }) {
         <AuthProvider>
           {/* <QueryProvider>
             <CartProvider> */}
-              <div>
+              <main>
                 {children}
-              </div>
+              </main>
             {/* </CartProvider>
           </QueryProvider> */}
         </AuthProvider>

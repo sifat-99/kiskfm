@@ -5,7 +5,6 @@ import {
   FaArrowRightFromBracket,
   FaBars,
   FaCalendar,
-  FaHouseMedical,
   FaLink,
   FaPlus,
   FaSquarePollVertical,
@@ -182,35 +181,45 @@ const DashNav = () => {
           <ul className="menu p-4 space-y-2 w-72 min-h-full bg-base-200 text-base-content">
 
             <hr />
-            <Link href={"/dashboard/createNewEvent"}>
+            <Link href={"/dashboard"}>
               <DashNavButton
                 className={`btn glass Navbar  text-lg w-full flex justify-start items-center ${
-                  pathname === "/dashboard/createNewEvent" && "bg-purple-500 "
+                  pathname === "/dashboard" && "bg-purple-500 "
                 }`}
               >
                 <FaPlus />
-                Create
+                Dashboard
               </DashNavButton>
             </Link>
 
             <hr />
-            <Link href={"/dashboard/events"}>
+            <Link href={"/noticeUpload"}>
               <DashNavButton
                 className={`flex justify-start items-center Navbar text-lg font-semibold gap-3 duration-500 btn glass  w-full
-                  } ${pathname === "/dashboard/events" && "Navbar "}`}
+                  } ${pathname === "/noticeUpload" && "Navbar "}`}
               >
-                <FaLink /> Events
+                <FaLink /> Notice Upload
               </DashNavButton>
             </Link>
 
             <hr />
-            <Link href={"/dashboard/scheduled-event"}>
+            <Link href={"/eventUpload"}>
               <DashNavButton
                 className={`flex justify-start items-center Navbar text-lg font-semibold gap-3 duration-500 btn glass  w-full ${
-                  pathname === "/dashboard/scheduled-event" && "Navbar"
+                  pathname === "/eventUpload" && "Navbar"
                 }`}
               >
-                <FaCalendar /> Scheduled Events
+                <FaCalendar />Events
+              </DashNavButton>
+            </Link>
+            <hr />
+            <Link href={"/"}>
+              <DashNavButton
+                className={`flex justify-start items-center Navbar text-lg font-semibold gap-3 duration-500 btn glass  w-full ${
+                  pathname === "/" && "Navbar"
+                }`}
+              >
+                <FaCalendar /> Home
               </DashNavButton>
             </Link>
 

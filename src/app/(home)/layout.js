@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
           <MenuBar />
         </div>
 
-        <div className="max-w-7xl mx-auto">
+        <div className="px-4 lg:px-20 mx-auto">
         {children}
         </div>
         <Footer/>
