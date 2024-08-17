@@ -128,15 +128,11 @@ console.log(session)
           ],
         }}
       />
-      <Typography
-        as="a"
-        href="notices"
-        variant="small"
-        color="blue-gray"
-        className="font-bold"
-      >
-        <ListItem className="flex items-center gap-2 py-2 pr-4">Notice</ListItem>
-      </Typography>
+      <Link href="/notices">
+      <button>
+        <ListItem className="flex items-center gap-2 py-2 pr-4 font-bold text-sm text-black">Notice</ListItem>
+      </button>
+      </Link>
       <NavListMenu
         data={{
           buttonName: "Routine",
