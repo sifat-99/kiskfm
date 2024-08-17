@@ -91,13 +91,13 @@ const DashNav = () => {
             </DashNavButton>
           </Link>
           <Link
-            href={"/noticeUpload"}
+            href={"/dashboard/noticeUpload"}
             className="flex justify-center items-center"
           >
             <DashNavButton
               className={`flex justify-start items-center0 text-lg font-semibold gap-3 duration-500 btn glass  w-full  ${
                 isClicked && "btn glass"
-              } ${pathname === "/noticeUpload" && "bg-transparent text-black"}`}
+              } ${pathname === "/dashboard/noticeUpload" && "bg-transparent text-black"}`}
             >
               <FaPlus />
               {isClicked ? "" : "Upload Notice"}
@@ -105,13 +105,13 @@ const DashNav = () => {
           </Link>
 
           <Link
-            href={"/eventsUpload"}
+            href={"/dashboard/eventsUpload"}
             className="flex justify-center items-center"
           >
             <DashNavButton
               className={`flex justify-start items-center  text-lg font-semibold gap-3 duration-500 btn glass  w-full  ${
                 isClicked && "btn glass"
-              } ${pathname === "eventsUpload" && "bg-transparent text-black"}`}
+              } ${pathname === "dashboard/eventsUpload" && "bg-transparent text-black"}`}
             >
               <FaLink /> {isClicked ? "" : "Events"}
             </DashNavButton>
@@ -193,20 +193,20 @@ const DashNav = () => {
             </Link>
 
             <hr />
-            <Link href={"/noticeUpload"}>
+            <Link href={"/dashboard/noticeUpload"}>
               <DashNavButton
                 className={`flex justify-start items-center Navbar text-lg font-semibold gap-3 duration-500 btn glass  w-full
-                  } ${pathname === "/noticeUpload" && "Navbar "}`}
+                  } ${pathname === "/dashboard/noticeUpload" && "Navbar "}`}
               >
                 <FaLink /> Notice Upload
               </DashNavButton>
             </Link>
 
             <hr />
-            <Link href={"/eventsUpload"}>
+            <Link href={"/dashboard/eventsUpload"}>
               <DashNavButton
                 className={`flex justify-start items-center Navbar text-lg font-semibold gap-3 duration-500 btn glass  w-full ${
-                  pathname === "/eventsUpload" && "Navbar"
+                  pathname === "/dashboard/eventsUpload" && "Navbar"
                 }`}
               >
                 <FaCalendar />Events
