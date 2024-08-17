@@ -203,10 +203,10 @@ const DashNav = () => {
             </Link>
 
             <hr />
-            <Link href={"/eventUpload"}>
+            <Link href={"/eventsUpload"}>
               <DashNavButton
                 className={`flex justify-start items-center Navbar text-lg font-semibold gap-3 duration-500 btn glass  w-full ${
-                  pathname === "/eventUpload" && "Navbar"
+                  pathname === "/eventsUpload" && "Navbar"
                 }`}
               >
                 <FaCalendar />Events
