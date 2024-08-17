@@ -11,8 +11,8 @@ export const metadata = {
 };
 export default function GalleryLayout({ children }) {
   return (
-    <html lang="en">
-      <body>
+
+      <section>
         <Navbar  data-testid="nab" />
         <div style={{ position: "sticky", top: 0, width: "100%", zIndex: 50, transition:"ease-in-out" }}>
           <MenuBar />
@@ -22,8 +22,7 @@ export default function GalleryLayout({ children }) {
         {children}
         </div>
         <Footer/>
-      </body>
-    </html>
+      </section>
   );
 }
 

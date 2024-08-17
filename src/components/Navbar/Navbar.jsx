@@ -55,9 +55,9 @@ const Navbar = () => {
       </div>
       <div className="flex-shrink-0 flex justify-center w-full md:w-auto text-center md:text-right font-nano transition-all duration-500 ease-in-out">
         <div className="flex  md:flex-col gap-2">
-          <button class="Btn-Container">
-            <span class="text">Online Admission</span>
-            <span class="icon-Container">
+          <button className="Btn-Container">
+            <span className="text">Online Admission</span>
+            <span className="icon-Container">
               <svg
                 width="16"
                 height="19"
@@ -79,11 +79,11 @@ const Navbar = () => {
             </span>
           </button>
           <Link href="https://xiclassadmission.gov.bd/">
-          <button class="Btn-Container">
-            <span class="text">
+          <button className="Btn-Container">
+            <span className="text">
               Xi Class Admission {year}-{year + 1}{" "}
             </span>
-            <span class="icon-Container">
+            <span className="icon-Container">
               <svg
                 width="16"
                 height="19"

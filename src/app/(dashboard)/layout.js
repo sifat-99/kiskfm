@@ -7,7 +7,7 @@ export const metadata = {
 
 export default async function DashboardLayout({ children }) {
   return (
-    <body>
+    <section>
       <div style={{ display: "flex", flexDirection: "row", height: "100vh" }}>
         <div>
           <DashNav />
@@ -23,6 +23,6 @@ export default async function DashboardLayout({ children }) {
           {children}
         </div>
       </div>
-    </body>
+    </section>
   );
 }
