@@ -5,22 +5,29 @@ import React, { useEffect, useState } from "react";
 import { Button, Card, Typography } from "@material-tailwind/react";
 import Link from "next/link";
 import { FaDeleteLeft, FaEye, FaFilePdf } from "react-icons/fa6";
+import UseLoader from "@/components/Loader/useLoader";
 
 const Notice = () => {
   const [notices, setNotices] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(10); // Adjust the number of items per page as needed
+  const [loadingIndicator, startLoading, stopLoading] = UseLoader();
 
   useEffect(() => {
-    axios
-      .get(`${BaseURL}/api/noticepdf`)
-      .then((response) => {
+    const fetchData = async () => {
+      startLoading(); // Show loading indicator
+      try {
+        const response = await axios.get(`${BaseURL}/api/noticepdf`);
         setNotices(response.data);
-      })
-      .catch((err) => {
-        console.error("Error fetching data: ", err);
-      });
-  }, []);
+      } catch (err) {
+        console.error(err);
+      } finally {
+        stopLoading(); // Hide loading indicator
+      }
+    };
+
+    fetchData(); // Only called once due to empty dependency array
+  }, [startLoading, stopLoading]);
 
   const TABLE_HEAD = ["S/N", "Title", "File", "Time", "Action"];
 
@@ -39,8 +46,9 @@ const Notice = () => {
 
   return (
     <>
-      <h1 className="text-3xl font-bold underline mb-4">All Notice</h1>
-      <Card className="w-full overflow-scroll Navbar">
+      <h1 className="text-3xl font-bold underline mb-4 mt-4 lg:mt-12">All Notice</h1>
+      {
+        notices.length > 0 ? <Card className="w-full overflow-scroll Navbar">
         <table className="w-full min-w-max table-auto text-left">
           <thead>
             <tr>
@@ -112,7 +120,8 @@ const Notice = () => {
             ))}
           </tbody>
         </table>
-      </Card>
+      </Card> : loadingIndicator
+      }
 
       {/* Pagination Controls */}
       <div className="flex justify-center mt-4">

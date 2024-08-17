@@ -8,26 +8,33 @@ import UploadModal, { UploadSection } from "@/components/Pages/UploadModal";
 import Link from "next/link";
 import { FaDeleteLeft, FaFilePdf } from "react-icons/fa6";
 import Swal from "sweetalert2";
+import UseLoader from "@/components/Loader/useLoader";
 
 const Page = () => {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(10); // Adjust the number of items per page as needed
+  const [loadingIndicator, startLoading, stopLoading] = UseLoader();
+
 
   const TABLE_HEAD = ["S/N", "Title", "File", "Time", "Action"];
 
   useEffect(() => {
     const fetchData = async () => {
+      startLoading(); // Show loading indicator
       try {
         const response = await axios.get(`${BaseURL}/api/noticepdf`);
         setData(response.data);
       } catch (err) {
-        console.log(err);
+        console.error(err);
+      } finally {
+        stopLoading(); // Hide loading indicator
       }
     };
 
-    fetchData();
-  }, []);
+    fetchData(); // Only called once due to empty dependency array
+  }, [startLoading, stopLoading]);
+
 
   const handleDeleteNotice = async (id) => {
     console.log(id)
@@ -62,91 +69,95 @@ const Page = () => {
 
   return (
     <>
+     
       <UploadSection />
 
       <h1 className="text-3xl font-bold underline mb-4">All Notice</h1>
-      <Card className="w-full overflow-scroll Navbar">
-        <table className="w-full min-w-max table-auto text-left">
-          <thead>
-            <tr>
-              {TABLE_HEAD.map((head) => (
-                <th
-                  key={head}
-                  className="border-b border-blue-gray-100 bg-blue-gray-50 p-4"
-                >
-                  <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="font-normal leading-none opacity-70"
+      {loadingIndicator}
+      {
+        data.length > 0 ? <Card className="w-full overflow-scroll Navbar">
+          <table className="w-full min-w-max table-auto text-left">
+            <thead>
+              <tr>
+                {TABLE_HEAD.map((head) => (
+                  <th
+                    key={head}
+                    className="border-b border-blue-gray-100 bg-blue-gray-50 p-4"
                   >
-                    {head}
-                  </Typography>
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {currentItems.map(({ title, file, time,_id }, index) => (
-              <tr key={index} className="even:bg-blue-gray-50/50">
-                <td className="p-4">
-                  <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="font-normal"
-                  >
-                    {indexOfFirstItem + index + 1}
-                  </Typography>
-                </td>
-                <td className="p-4">
-                  <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="font-normal"
-                  >
-                    {title}
-                  </Typography>
-                </td>
-                <td className="p-4">
-                  <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="font-normal"
-                  >
-                    <Link href={file}>
-                    <FaFilePdf className="text-red-400 text-3xl" />
-                    </Link>
-                  </Typography>
-                </td>
-                <td className="p-4">
-                  <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="font-normal"
-                  >
-                    {time}
-                  </Typography>
-                </td>
-                <td className="p-4 flex gap-4">
-                  <Button onClick={()=>{
-                    handleDeleteNotice(_id)
-                  }}>
-                    <FaDeleteLeft className="text-red-400" />
-                  </Button>
-                  <Typography
-                    as="a"
-                    href="#"
-                    variant="small"
-                    color="blue-gray"
-                    className="font-medium"
-                  >
-                    Edit
-                  </Typography>
-                </td>
+                    <Typography
+                      variant="small"
+                      color="blue-gray"
+                      className="font-normal leading-none opacity-70"
+                    >
+                      {head}
+                    </Typography>
+                  </th>
+                ))}
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </Card>
+            </thead>
+            <tbody>
+              {currentItems.map(({ title, file, time,_id }, index) => (
+                <tr key={index} className="even:bg-blue-gray-50/50">
+                  <td className="p-4">
+                    <Typography
+                      variant="small"
+                      color="blue-gray"
+                      className="font-normal"
+                    >
+                      {indexOfFirstItem + index + 1}
+                    </Typography>
+                  </td>
+                  <td className="p-4">
+                    <Typography
+                      variant="small"
+                      color="blue-gray"
+                      className="font-normal"
+                    >
+                      {title}
+                    </Typography>
+                  </td>
+                  <td className="p-4">
+                    <Typography
+                      variant="small"
+                      color="blue-gray"
+                      className="font-normal"
+                    >
+                      <Link href={file}>
+                      <FaFilePdf className="text-red-400 text-3xl" />
+                      </Link>
+                    </Typography>
+                  </td>
+                  <td className="p-4">
+                    <Typography
+                      variant="small"
+                      color="blue-gray"
+                      className="font-normal"
+                    >
+                      {time}
+                    </Typography>
+                  </td>
+                  <td className="p-4 flex gap-4">
+                    <Button onClick={()=>{
+                      handleDeleteNotice(_id)
+                    }}>
+                      <FaDeleteLeft className="text-red-400" />
+                    </Button>
+                    <Typography
+                      as="a"
+                      href="#"
+                      variant="small"
+                      color="blue-gray"
+                      className="font-medium"
+                    >
+                      Edit
+                    </Typography>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </Card> : <p className="text-center text-2xl"></p>
+      }
 
       {/* Pagination Controls */}
       <div className="flex justify-center mt-4">

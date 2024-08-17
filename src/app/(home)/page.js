@@ -8,6 +8,7 @@ import Running_Banner from "@/components/Pages/Marquee";
 import { BaseURL } from "@/utils/constant";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { increment } from "../../../Redux/counterSlider";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -32,6 +33,8 @@ const Home = () => {
       <Running_Banner />
       <Banner />
       <MapSection />
+
+    
     </main>
   );
 };
