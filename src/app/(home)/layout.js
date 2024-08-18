@@ -14,7 +14,7 @@ export default function HomeLayout({ children }) {
     
       <section>
         <Navbar  data-testid="nab" />
-        <div style={{ position: "sticky", top: 0, width: "100%", zIndex: 50, transition:"ease-in-out" }}>
+        <div style={{ position: "sticky", top: 0, width: "100%", zIndex: 1, transition:"ease-in-out" }}>
           <MenuBar />
         </div>
 

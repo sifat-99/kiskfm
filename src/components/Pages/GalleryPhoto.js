@@ -1,8 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 import { useEffect, useState } from 'react';
 import UseLoader from '../Loader/useLoader';
 import axios from 'axios';
 import { BaseURL } from '@/utils/constant';
+import TransitionEffects from '../TransitionEffects';
 
 
 
@@ -40,6 +42,8 @@ export default function GalleryPhoto () {
     }, [currentSlider]);
 
     return (
+         <>
+         <TransitionEffects />
           <div className="flex flex-row-reverse justify-between mt-10">
               {
                 data.length > 0 ? <div className="h-72 w-full transform overflow-hidden rounded-lg before:bg-black/50 sm:h-96 md:h-[540px] lg:gap-10">
@@ -86,6 +90,6 @@ export default function GalleryPhoto () {
                       );
                   })}
               </div>
-          </div>
+          </div></>
     );
 };

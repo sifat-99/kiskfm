@@ -6,6 +6,7 @@ import { Button, Card, Typography } from "@material-tailwind/react";
 import Link from "next/link";
 import { FaDeleteLeft, FaEye, FaFilePdf } from "react-icons/fa6";
 import UseLoader from "@/components/Loader/useLoader";
+import TransitionEffects from "@/components/TransitionEffects";
 
 const Notice = () => {
   const [notices, setNotices] = useState([]);
@@ -46,6 +47,7 @@ const Notice = () => {
 
   return (
     <>
+    <TransitionEffects />
       <h1 className="text-3xl font-bold underline mb-4 mt-4 lg:mt-12">All Notice</h1>
       {
         notices.length > 0 ? <Card className="w-full overflow-scroll Navbar">
