@@ -10,6 +10,7 @@
   align-items: center;
   border: none;
   cursor: pointer;
+  padding: 5px 10px;
 }
 .icon-Container {
   width: 20px;
@@ -28,7 +29,7 @@
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 8px;
+  font-size: 9px;
 
 }
 .icon-Container svg {

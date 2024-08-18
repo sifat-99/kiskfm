@@ -163,7 +163,7 @@ console.log(session)
       </Typography>
       <Typography
         as="a"
-        href="about"
+        href="contact"
         variant="small"
         color="blue-gray"
         className="font-bold"

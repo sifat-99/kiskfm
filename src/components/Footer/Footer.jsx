@@ -10,10 +10,10 @@ const Footer = () => {
       <footer className=" font-sans lg:px-40 h-auto pt-10">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="px-4">
-            <h1 className="text-xl underline font-semibold mb-4 text-white">
+            <h1 className="text-2xl underline font-semibold mb-4 text-white">
               Important Links
             </h1>
-            <ul className="space-y-2 mb-4">
+            <ul className="space-y-2 mb-4 font-nano">
               <li>
                 <a
                   href="https://moedu.gov.bd/"

@@ -4,7 +4,7 @@
 - Technology user Next.js
 - There are four members in the team.
 - The project deadline is 7 weeks.
-- The live link of the project is https://meet-ready.vercel.app/
+- The live link of the project is https://Kishrogonj-Keshba-Fazil-Madrasha.vercel.app/
 - Below I will describe my contribution to the project.
 
 ### Authentication

@@ -18,7 +18,7 @@ const MapSection = () => {
 
       <div className="w-full">
         <div className="px-4">
-        <h1 className="text-xl underline font-semibold mb-4">Important Links</h1>
+        <h1 className="text-3xl underline font-semibold mb-4">Important Links</h1>
         <ul className="space-y-2 mb-4">
           <li>
             <a

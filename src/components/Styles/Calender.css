@@ -1,6 +1,6 @@
 /* Calendar.css */
 .calendar-container {
-  max-width: 350px;
+  max-width: 100%;
   margin: auto;
   background-image: url("https://i.ibb.co/fSPQjFC/bg-popup.png");
   background-size: cover;
@@ -12,7 +12,7 @@
   color: rgb(2, 2, 2);
   border: none;
   border-radius: 10px;
-  padding: 20px;
+  padding:  10px 20px;
 }
 
 .react-calendar {
@@ -20,12 +20,16 @@
   border: none;
   background-color: transparent;
 }
-
+.react-calendar__navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+}
 .react-calendar__navigation button {
   color: #000000;
   min-width: 44px;
-  background: none;
-  font-size: 16px;
+  font-size: 20px;;
 }
 
 .react-calendar__month-view__weekdays {

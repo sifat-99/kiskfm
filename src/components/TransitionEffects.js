@@ -11,7 +11,7 @@ function TransitionEffects() {
         }}
         initial={{ x: "100%", width: "100%" }}
         animate={{
-          scale: [1, 0.8, 0.5, 0.3, 0],
+          scale: [1, 0.9, 0.8, 0.7, 0.6,0.5,0.4,0.3,0.2,0.1,0],
           borderRadius: ["20%", "20%", "50%", "50%", "50%"],
         }}
         
@@ -27,7 +27,6 @@ function TransitionEffects() {
         />
       </motion.div>
 
-     
     </>
   );
 }

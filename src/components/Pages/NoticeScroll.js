@@ -83,7 +83,7 @@ const ScrollNotice = () => {
   return (
     <main className="p-4 h-96">
       <div className="flex items-center justify-between gap-4 mb-2">
-        <button className="text-xl">Notice Board</button>
+        <button className="text-2xl">Notice Board</button>
         <Link href="/notices">
         <button className="bg-black hover:bg-blue-gray-200 text-white hover:text-black font-bold py-2 px-4 rounded">
           View All

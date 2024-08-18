@@ -2,7 +2,13 @@ import GalleryPhoto from "@/components/Pages/GalleryPhoto";
 import React from "react";
 
 const Gallery = () => {
-  return <GalleryPhoto />;
+  return (
+    <>
+      <div className="min-h-[50vh]">
+        <GalleryPhoto />
+      </div>
+    </>
+  );
 };
 
 export default Gallery;

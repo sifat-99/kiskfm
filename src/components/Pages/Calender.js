@@ -8,10 +8,9 @@ export function CustomCalendar() {
   return (
     <div className="calendar-container ">
       <Calendar
-        onChange={setValue}
         value={value}
         className="dark-calendar "
-        locale="en-US" // or set this dynamically based on your requirement
+        locale="en-US" 
       />
     </div>
   );

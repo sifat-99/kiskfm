@@ -1,5 +1,4 @@
 "use client";
-import Logout from "@/components/Logout/Logout";
 /* eslint-disable @next/next/no-img-element */
 import Banner from "@/components/Pages/Banner";
 import MapSection from "@/components/Pages/MapSection";
@@ -8,7 +7,6 @@ import Running_Banner from "@/components/Pages/Marquee";
 import { BaseURL } from "@/utils/constant";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { increment } from "../../../Redux/counterSlider";
 import Modal1 from "@/components/Hooks/useModal";
 import UseLoader from "@/components/Loader/useLoader";
 import TransitionEffects from "@/components/TransitionEffects";
@@ -26,7 +24,6 @@ const Home = () => {
       try {
         const response = await axios.get(`${BaseURL}/api/principleAndFounder`);
         setUserData(response.data);
-        console.log(response.data);
       } catch (err) {
         console.error(err);
       } finally {
@@ -49,12 +46,10 @@ const Home = () => {
 
     FetchData();
   }, []);
-
-  console.log(data);
   return (
     <>
     <TransitionEffects />
-      <main className=" px-4 md:px-6 lg:px-20">
+      <main className="">
         <Running_Banner />
         <Banner />
         <MapSection />
