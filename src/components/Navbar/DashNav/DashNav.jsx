@@ -132,6 +132,20 @@ const DashNav = () => {
               <FaPhotoFilm /> {isClicked ? "" : "Gallery"}
             </DashNavButton>
           </Link>
+          <Link
+            href={"/dashboard/principle"}
+            className="flex justify-center items-center"
+          >
+            <DashNavButton
+              className={`flex justify-start items-center  text-lg font-semibold gap-3 duration-500 btn glass w-full  ${
+                isClicked && "btn glass"
+              } ${
+                pathname === "/dashboard/principle" && "bg-transparent text-black"
+              }`}
+            >
+              <FaPhotoFilm /> {isClicked ? "" : "Principal's Message"}
+            </DashNavButton>
+          </Link>
         </div>
 
         <div className="p-3">
@@ -221,6 +235,16 @@ const DashNav = () => {
                 }`}
               >
                 <FaPhotoFilm />Gallery
+              </DashNavButton>
+            </Link>
+            <hr />
+            <Link href={"/dashboard/principle"}>
+              <DashNavButton
+                className={`flex justify-start items-center Navbar text-lg font-semibold gap-3 duration-500 btn glass  w-full ${
+                  pathname === "/dashboard/principle" && "Navbar"
+                }`}
+              >
+                <FaPhotoFilm />Principal&apos;s Message
               </DashNavButton>
             </Link>
             <hr />
