@@ -81,11 +81,11 @@ export function UploadRunningNotice() {
           <Typography variant="h6" color="blue-gray" className="-mb-3">
             Notice Title
           </Typography>
-          <Input label="Notice Title" onChange={(e)=>{setTitle(e.target.value)}} />
+          <Input label="Notice Title" required onChange={(e)=>{setTitle(e.target.value)}} />
           <Typography variant="h6" color="blue-gray" className="-mb-3">
             Notice Description
           </Typography>
-          <Input label="Notice Description" onChange={(e)=>{
+          <Input label="Notice Description" required onChange={(e)=>{
             setDescription(e.target.value)
           }} />
           <Typography variant="h6" color="blue-gray" className="-mb-3">

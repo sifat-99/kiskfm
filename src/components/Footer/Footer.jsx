@@ -99,7 +99,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="border-t-2 text-white text-center">
-          <p className="text-center pt-4">© {year} All Rights Reserved</p>
+          <p className="text-center pt-4">© {year} All Rights <a href="https://mdabdurrahmansifat.vercel.app" className="text-white" target="_blank" rel="noopener noreferrer">Reserved</a></p>
         </div>
       </footer>
     </div>

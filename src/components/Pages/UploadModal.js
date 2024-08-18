@@ -25,12 +25,15 @@ export function UploadSection() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
 
-  const timeStr = date ? date.toLocaleDateString() : "Select a Date";
-  useEffect(() => {
-    setTime(timeStr);
-  }, [timeStr]);
+
+const time = new Date().toLocaleDateString();
+
+
+  // const timeStr = date ? date.toLocaleDateString() : "Select a Date";
+  // useEffect(() => {
+  //   setTime(timeStr);
+  // }, [timeStr]);
 
   console.log(time)
   console.log(title)
@@ -82,14 +85,14 @@ export function UploadSection() {
           <Typography variant="h6" color="blue-gray" className="-mb-3">
             Notice Title
           </Typography>
-          <Input label="Notice Title" onChange={(e)=>{setTitle(e.target.value)}} />
+          <Input label="Notice Title" required onChange={(e)=>{setTitle(e.target.value)}} />
           <Typography variant="h6" color="blue-gray" className="-mb-3">
-            Notice Description
+            Notice Description (Optional)
           </Typography>
           <Input label="Notice Description" onChange={(e)=>{
             setDescription(e.target.value)
           }} />
-          <Typography variant="h6" color="blue-gray" className="-mb-3">
+          {/* <Typography variant="h6" color="blue-gray" className="-mb-3">
             Notice Time
           </Typography>
           <div className="">
@@ -149,7 +152,7 @@ export function UploadSection() {
                 />
               </PopoverContent>
             </Popover>
-          </div>
+          </div> */}
           <div className="flex gap-10">
             <h1 className="mt-2">Upload PDF:</h1>
             <UploadButton
