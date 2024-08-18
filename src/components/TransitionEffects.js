@@ -16,15 +16,14 @@ function TransitionEffects() {
         }}
         
         exit={{ scale: 0 }}
-        transition={{ duration: 0.1, ease: "easeInOut" }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
       >
         <motion.img
           src="https://utfs.io/f/2f9be6ee-7488-4909-a2bd-02669daaebc9-1evuz.png"
           alt="Center Image"
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
           initial={{ opacity: 1 }}
-
-          transition={{ duration: 0.1, ease: "easeInOut" }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
         />
       </motion.div>
 
