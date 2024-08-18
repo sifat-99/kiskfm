@@ -87,7 +87,7 @@ export default function GalleryPhoto() {
             </div>
           }
           {/* slider container */}
-          <div className="flex flex-col items-center justify-center gap-3 p-2">
+          <div className="flex flex-col items-center justify-center gap-3 pr-2 py-2">
             {data.map((slide, index) => {
               const { img, title } = slide;
               return (
