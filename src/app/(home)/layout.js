@@ -19,7 +19,7 @@ export default function HomeLayout({ children }) {
           position: "sticky",
           top: 0,
           width: "100%",
-          zIndex: 1,
+          zIndex: 20,
           transition: "ease-in-out",
         }}
       >

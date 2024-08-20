@@ -7,7 +7,7 @@ export default function Modal1({ data }) {
   const [openModal, setOpenModal] = useState(false);
   console.log(data);
   return (
-    <div className="mx-auto w-fit">
+    <div className="mx-auto w-fit" onClick={() => setOpenModal(true)}>
        <div
        
       className="relative w-64 h-auto overflow-hidden rounded-lg focus:outline-none"
