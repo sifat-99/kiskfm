@@ -10,7 +10,7 @@ export default function Modal1({ data }) {
     <div className="mx-auto w-fit" onClick={() => setOpenModal(true)}>
        <div
        
-      className="relative w-64 h-auto overflow-hidden rounded-lg focus:outline-none"
+      className="relative w-64 h-[250px] overflow-hidden rounded-lg focus:outline-none"
       aria-label="View Principal's Message"
     >
       <img
