@@ -5,12 +5,12 @@ import { Carousel } from "@material-tailwind/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import UseLoader from "../Loader/useLoader";
- 
+
 export function CarouselDefault() {
   const [images, setImages] = useState([]);
   const [loadingIndicator, startLoading, stopLoading] = UseLoader();
 
- useEffect(() => {
+  useEffect(() => {
     const fetchData = async () => {
       startLoading(); // Show loading indicator
       try {
@@ -27,20 +27,23 @@ export function CarouselDefault() {
   }, [startLoading, stopLoading]);
 
   return (
-    <Carousel loop={true} autoplay={0.5}  className="rounded-xl h-[450px] w-fit mb-4">
-      
-      {
-        images.length > 0 ?
-        images.map((image,index) => (
-          <img
+    <>
+     {
+      images.length > 0 ?  <Carousel
+      loop={true}
+      autoplay={0.5}
+      className="rounded-xl h-[450px] w-fit mb-4"
+    >
+      {images.map((image, index) => (
+        <img
           key={index}
-        src={image?.imageUrl}
-        alt={image?.title}
-        className="h-full w-full object-cover"
-      /> 
-        )): loadingIndicator
-      }
-      
-    </Carousel>
+          src={image?.imageUrl}
+          alt={image?.title}
+          className="h-full w-full object-cover"
+        />
+      ))}
+    </Carousel> : loadingIndicator
+     }
+    </>
   );
 }
