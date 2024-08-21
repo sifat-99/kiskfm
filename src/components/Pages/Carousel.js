@@ -27,7 +27,7 @@ export function CarouselDefault() {
   }, [startLoading, stopLoading]);
 
   return (
-    <Carousel loop={true} autoplay={0.5}  className="rounded-xl h-[350px]">
+    <Carousel loop={true} autoplay={0.5}  className="rounded-xl h-[450px] w-fit mb-4">
       
       {
         images.length > 0 ?
