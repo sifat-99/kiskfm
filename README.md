@@ -15,15 +15,6 @@ Kishorgonj Keshba Fazil Madrasha is a renowned Islamic educational institution l
 - Regular assessments and evaluations to track student progress
 - Strong community engagement and support
 
-## Getting Started
-
-To get started with Kishorgonj Keshba Fazil Madrasha, follow these steps:
-
-1. Clone this repository to your local machine.
-2. Explore the different sections and folders to access relevant information.
-3. Refer to the documentation for guidelines on admissions, courses, and other important details.
-4. Join our community forums or reach out to our administration for any queries or assistance.
-
 ## Contributing
 
 We welcome contributions from students, faculty, and the wider community. If you would like to contribute to the development of our institution, please follow the guidelines outlined in the CONTRIBUTING.md file.
