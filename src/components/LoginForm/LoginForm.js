@@ -44,8 +44,8 @@ const LoginForm = () => {
     } else {
       setLoading(false);
       toast.success("Successfully login!");
+      router.push("/dashboard");
     }
-    router.push("/dashboard");
   };
   return (
     <section className="flex flex-col md:flex-row h-screen items-center">
@@ -60,7 +60,7 @@ const LoginForm = () => {
         id="range"
         className="w-full md:max-w-md lg:max-w-full md:mx-auto  md:w-1/2 xl:w-1/3 h-screen px-6 lg:px-16 xl:px-12   flex items-center justify-center"
       >
-        <div className="w-full h-100">
+        <section className="w-full h-100">
           <div className="flex items-center justify-center">
             <p className="text-center text-3xl">
               <span
@@ -77,12 +77,12 @@ const LoginForm = () => {
 
           <form className="mt-6" onSubmit={handleSubmit}>
             <div>
-              <label className="block text-gray-700">Email Address</label>
+              <label className="block text-gray-700">User Name</label>
               <InputField
-                type="email"
+                type="text"
                 name="email"
                 id="email"
-                placeholder="Enter Email Address"
+                placeholder="Enter Username"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full px-4 py-3 rounded-lg mt-2text-gray-700 bg-white border focus:border-purple-400 dark:focus:border-purple-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-purple-300"
@@ -137,7 +137,7 @@ const LoginForm = () => {
             )}
           </form>
           <hr className="my-6 border-gray-300 w-full" />
-        </div>
+        </section>
       </div>
     </section>
   );
