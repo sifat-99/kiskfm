@@ -12,7 +12,6 @@ export const GET = async () => {
 export const POST = async (req) => {
   try {
     const database = await req.json()
-    console.log('receive from google', database)
     await connect()
     try {
       await bannerimage.create(database)

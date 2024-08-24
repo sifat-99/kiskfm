@@ -10,7 +10,6 @@ export const DELETE = async(request, {params}) => {
     const deleteEvent = await photo.findByIdAndDelete(id)
     return NextResponse.json("Item Deleted", {status: 200})
   } catch (error) {
-    console.log(error)
     return new NextResponse("Internal Server Error", { status: 500 });
   }
 }
