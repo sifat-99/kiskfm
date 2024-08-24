@@ -27,3 +27,10 @@ For any inquiries or further information, please contact us at:
 - Phone: +8801794803612
 
 We look forward to your involvement and wish you a fruitful learning experience at Kishorgonj Keshba Fazil Madrasha!
+
+
+## Developer
+- Name: Md Abdur Raman Sifat
+- [Github](https://github.com/sifat-99)
+- [Portfolio](https:mdabdurrahmansifat.vercel.app)
+
