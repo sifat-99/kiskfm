@@ -3,6 +3,16 @@ import { useState } from "react";
 import "@/components/Navbar/menu.css";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 
+// Modal Component
+// data = {name, designation, image, message}
+// name = Name of the person
+// designation = Designation of the person
+// image = Image URL of the person
+// message = Message of the person
+// role = Role of the person
+
+
+
 export default function Modal1({ data }) {
   const [openModal, setOpenModal] = useState(false);
   console.log(data);
