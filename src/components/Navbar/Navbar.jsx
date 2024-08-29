@@ -9,7 +9,7 @@ import Link from "next/link";
 const Navbar = () => {
 
 const [containerStyle, setContainerStyle] = useState({
-  backgroundImage: "url('https://i.ibb.co/s93XJjs/menu.png')",
+  backgroundImage: "url('https://utfs.io/f/9f9783bc-d539-4192-a843-6f733d23a9ac-1zr6n.png')",
   backgroundColor: "#FEF9C7",
   backgroundSize: '2%',
   backgroundPosition: "bottom",

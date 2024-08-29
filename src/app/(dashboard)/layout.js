@@ -16,7 +16,7 @@ export default async function DashboardLayout({ children }) {
           style={{
             flex: 1,
             overflowY: "auto",
-            backgroundImage: "url('https://i.ibb.co/6yd472L/Group-2.png')",
+            backgroundImage: "url('https://utfs.io/f/1eb265aa-e8ff-46f6-a75d-cb71f9b08205-2f9.png')",
           }}
           className="mt-16 lg:mt-12 px-4 md:px-10"
         >
